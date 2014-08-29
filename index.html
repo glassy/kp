@@ -83,7 +83,7 @@
 				</button>
 
 			<a class="navbar-brand" href = "http://glassy.github.io/we/" data-0 = "position: fixed; 
-					top:0px; left:0px;"
+					bottom:0px; left:0px;"
 			 data-500 = "left: 15px;">透明連線</a>
 
 
@@ -129,12 +129,11 @@
 
 				ng-repeat="(key, item) in main.categories"
 				ng-click="main.clickOnCategory(item.id)"
-
 				style = "cursor:pointer;"
 
 				>
 
-				{{item.name}}<sub><i><a href = "http://glassy.github.io/we/#way">依透明+群策原則，僅為轉述</a></i></sub>
+				{{item.name}}<sub><i><a href = "http://glassy.github.io/we/#way">僅為轉述</a></i></sub>
 					<ul class='articles'>
 						<li class='article' ng-repeat="(key, article) in item.posts"
 
