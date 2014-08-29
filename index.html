@@ -1,52 +1,155 @@
-<!DOCTYPE html>
-<html>
+<html ng-app="kpApp">
+<head>
+	<meta charset="UTF-8" />
+	
+	<title>柯文哲文章集</title>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Kp : 柯文哲野生官網之一">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<style>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+	html {
+		background-image: url(http://goooooooogle.github.io/kp/img/kp.png)
+	}
 
-    <title>Kp</title>
-  </head>
 
-  <body>
+	p {
+		margin-top: 44px;
+	}
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/glassy/kp">View on GitHub</a>
+	p:first-letter {
+		margin-left: 32px;
+		font-size: 120%;
+	}
 
-          <h1 id="project_title">Kp</h1>
-          <h2 id="project_tagline">柯文哲野生官網之一</h2>
+	.category,.article{	
+		cursor:pointer;
+	}
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/glassy/kp/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/glassy/kp/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+	ul {
+		font-size: 22px;
+	}
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="kp" class="anchor" href="#kp"><span class="octicon octicon-link"></span></a>kp</h1>
+	ul:hover {
+		background-color: hsla(120,80%,100%,0.2);
+	}
 
-<p>柯文哲野生官網之一</p>
-      </section>
-    </div>
+	ul>li {
+		margin-top: 5px;
+	}
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Kp maintained by <a href="https://github.com/glassy">glassy</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+	ul>li:hover {
+		text-decoration: underline;
+	}
 
-    
+	</style>
+</head>
 
-  </body>
+<body ng-controller="MainCtrl as main" id="skrollr-body"
+	
+	data-0 = "background-color:hsla(120,50%,20%,1); 
+		color: hsla(120,35%,70%,1);"
+
+	data-1000 = "background-color:hsla(20,100%,0%,0)"
+
+	>
+	<header class="navbar navbar-static-top bs-docs-nav"
+			id="top" role="banner" 
+
+				style = "background-color: hsla(250,100%,80%,0.8);
+							width:100%;"
+
+				data-0 = "position:fixed; top:-50px; font-size: 11px;"
+				data-500 = "position:fixed; top:0px; font-size: 16px;"
+	>
+		<div class="container">
+
+			<div class="navbar-header" >
+
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html" class="navbar-brand">柯文哲 API 範例站</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="index.html">文章範例</a>
+					</li>
+					<li>
+						<a href="album.html">相簿範例</a>
+					</li>
+					<li>
+						<a href="video.html">影片範例</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="http://kptaipei.tw" target="_blank">柯文哲官網</a></li>
+					<li>
+						<a href="http://unlimited.kptaipei.tw" target="_blank">野生官網活動介紹</a>
+					</li>	        
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container" data-0="position: fixed;">
+		
+		<div class="col-md-4"
+			style = "height:70%; overflow:auto;"
+				data-0 = "position: fixed; top:55px; left:-350px;
+						background-color: hsla(120,20%,60%,0.5)"
+				data-1000 = "left:0px;
+						background-color: hsla(60,20%,20%,0.86)">
+
+			<h2>文章類別目錄</h2>
+			<ul class="categories"
+
+				<li class='category'
+
+				ng-repeat="(key, item) in main.categories"
+				ng-click="main.clickOnCategory(item.id)"
+
+				style = "cursor:pointer;"
+
+				>
+
+				{{item.name}}
+					<ul class='articles'>
+						<li class='article' ng-repeat="(key, article) in item.posts"
+
+						ng-click="main.clickOnArticle($event, article)">{{article.title | showTitle}}</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="page col-xs-12 col-sm-6 col-md-8 col-xs-6"
+
+				data-0 = "position: fixed;
+							top:55px; right:0px;
+							height: 70%;
+							width: 50%;
+							overflow:auto;
+							font-size:28px;line-height: 44px;
+							background-color: hsla(60,70%,5%,0.5)"
+
+				data-end = "right:0px; font-size:30px; line-height:60px;
+							background-color: hsla(60,50%,25%,0.86)"
+
+				ng-bind-html="main.content">
+			
+		</div>
+	</div>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>	
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-route.min.js"></script>		
+	<script src="app.js"></script>
+	<script src="skrollr.min.js"></script>
+
+	<script src="index.js"></script>
+
+</body>
 </html>
