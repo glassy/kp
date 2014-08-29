@@ -7,3 +7,5 @@ angular.module("kpApp")
 
 		}
 	})
+
+s.animateTo(1000,10000)
