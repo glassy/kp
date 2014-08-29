@@ -36,12 +36,10 @@
 
 <body ng-controller="MainCtrl as main" id="skrollr-body"
 	
-	data-0 = "background-color:hsla(60,50%,50%,0.7);
+	data-0 = "background-color:hsla(120,10%,80%,0.7);
 			 color:hsla(99,0%,30%,0.5)"
 
-	data-400 = "color:hsla(99,0%,40%,0.5)"
-
-	data-1000 = "background-color:hsla(120,100%,0%,0);
+	data-1000 = "background-color:hsla(240,100%,0%,0);
 				 color:hsla(99,0%,20%,1);
 				 "
 
@@ -128,13 +126,27 @@
 				data-0 = "  height: 100%;
 							overflow:auto;
 							font-size:28px;line-height: 44px;
-							background-color: hsla(60,60%,35%,0.6)"
+							background-color: hsla(120,20%,75%,0.6)"
 
 				data-end = "font-size:30px; line-height:60px;
-							background-color: hsla(60,75%,100%,0.86)"
+							background-color: hsla(240,75%,100%,0.86)"
+				ng-bind-html="main.content">			
+		</div>
 
-				ng-bind-html="main.content">
-			
+		<div class="page col-sm-1 col-md-1 col-xs-1">
+
+		<a href="http://kptaipei.tw" target="_blank">	
+
+			<img class = "avatar" alt = "柯文哲官網"
+				src="http://goooooooogle.github.io/kp/img/kp.png"
+
+
+			data-0 = "position: relative; top:500px; transform: rotateX(90deg);"	
+
+			data-1000 = "top:0; transform: rotateX(0deg);"
+			/>	
+		</a>
+
 		</div>
 
 
