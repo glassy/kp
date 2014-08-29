@@ -54,13 +54,15 @@
 		
 		<div class="col-md-4">
 			<h2> 播放清單列表</h2>
-			<ul class="categories">
+			<ol class="categories">
 				<li class='playlist' ng-repeat="item in vc.categories" ng-click="vc.clickOnCategory(item.id)" style = "cursor:pointer;">{{item.title}}
+
 					<ul class='videos'>
 						<li class='video' ng-repeat="video in item.videos" ng-click="vc.clickOnVideo($event, video)">{{video.title}}</li>
 					</ul>
+					
 				</li>
-			</ul>
+			</ol>
 		</div>
 		<div class="page col-xs-12 col-sm-6 col-md-8 col-xs-6">
 			<h2>{{vc.content.title}}</h2>
