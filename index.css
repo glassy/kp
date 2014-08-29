@@ -1,0 +1,19 @@
+
+	html {
+		background-image: url(http://goooooooogle.github.io/kp/img/kp.png);
+		background-repeat:no-repeat;
+		background-attachment: fixed;
+
+		min-height: 1000px;
+	}
+
+
+	li {
+		font-size: 22px;
+		margin-top: 22px;
+	}
+
+	pre {
+		font-size: 36px;
+		padding: 22px;
+	}
