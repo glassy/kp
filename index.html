@@ -58,10 +58,8 @@
 
 <body ng-controller="MainCtrl as main" id="skrollr-body"
 	
-	data-0 = "background-color:hsla(120,50%,20%,1); 
-		color: hsla(120,35%,70%,1);"
-
-	data-1000 = "background-color:hsla(20,100%,0%,0)"
+	data-0 = "background-color:hsla(60,50%,50%,0.7);"
+	data-1000 = "background-color:hsla(120,100%,0%,0)"
 
 	>
 	<header class="navbar navbar-static-top bs-docs-nav"
@@ -83,18 +81,24 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="index.html" class="navbar-brand">柯文哲 API 範例站</a>
+
+			<a class="navbar-brand" href = "http://glassy.github.io/we/" data-0 = "position: fixed; 
+					top:0px; left:0px;"
+			 data-500 = "left: 15px;">透明連線</a>
+
+
+				<a href="index.html" class="navbar-brand">柯文哲 API </a>
 			</div>
 			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 				<ul class="nav navbar-nav">
 					<li class="active">
-						<a href="index.html">文章範例</a>
+						<a href="index.html">文章</a>
 					</li>
 					<li>
-						<a href="album.html">相簿範例</a>
+						<a href="album.html">相簿</a>
 					</li>
 					<li>
-						<a href="video.html">影片範例</a>
+						<a href="video.html">影片</a>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -113,10 +117,10 @@
 			style = "height:70%; overflow:auto;"
 
 				data-0 = "position: fixed; top:55px; left:-350px;
-						background-color: hsla(120,20%,60%,0.5)"
+						background-color: hsla(120,20%,55%,0.5)"
 				data-1000 = "left:0px;
 
-						background-color: hsla(60,20%,20%,0.86)">
+						background-color: hsla(120,50%,85%,0.86)">
 
 			<h2>文章類別目錄</h2>
 			<ul class="categories" style = "width:100%;"
@@ -145,15 +149,20 @@
 							height: 70%;
 							overflow:auto;
 							font-size:28px;line-height: 44px;
-							background-color: hsla(60,70%,5%,0.5)"
+							background-color: hsla(60,70%,55%,0.5)"
 
 				data-end = "right:0px; font-size:30px; line-height:60px;
-							background-color: hsla(60,50%,25%,0.86)"
+							background-color: hsla(60,75%,85%,0.86)"
 
 				ng-bind-html="main.content">
 			
 		</div>
+
+
+
 	</div>
+
+
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>	
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-route.min.js"></script>		
