@@ -38,8 +38,11 @@ function kptService($http,API){
 }
 
 // 文章範例頁面
-MainController.$injector = ['$sce','kptService'];
-function MainController($sce,kptService){
+MainController.$injector = ['$scope','$sce','kptService','$window'];
+function MainController($scope, $sce,kptService,$window){
+	
+	$scope.h = $window.innerHeight;
+
 	var vm = this;
 	vm.clickOnCategory = clickOnCategory;
 	vm.clickOnArticle = clickOnArticle;
