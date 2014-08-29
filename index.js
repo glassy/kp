@@ -8,4 +8,4 @@ angular.module("kpApp")
 		}
 	})
 
-s.animateTo(1000)
+s.animateTo(1000);

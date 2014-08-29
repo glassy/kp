@@ -19,6 +19,9 @@
 	html {
 		background-image: url(http://goooooooogle.github.io/kp/img/kp.png);
 		background-repeat:no-repeat;
+		background-attachment: fixed;
+
+		min-height: 1000px;
 	}
 
 
@@ -58,8 +61,11 @@
 
 <body ng-controller="MainCtrl as main" id="skrollr-body"
 	
-	data-0 = "background-color:hsla(60,50%,50%,0.7);"
-	data-1000 = "background-color:hsla(120,100%,0%,0)"
+	data-0 = "background-color:hsla(60,50%,50%,0.7); color:hsla(99,0%,60%,0)"
+
+	data-400 = "color:hsla(99,0%,60%,0)"
+
+	data-1000 = "background-color:hsla(120,100%,0%,0); color:hsla(99,0%,20%,1)"
 
 	>
 	<header class="navbar navbar-static-top bs-docs-nav"
@@ -69,7 +75,7 @@
 							width:100%;"
 
 				data-0 = "position:fixed; top:-50px; font-size: 11px;"
-				data-500 = "position:fixed; top:0px; font-size: 16px;"
+				data-500 = "top:0px; font-size: 16px;"
 	>
 		<div class="container">
 
